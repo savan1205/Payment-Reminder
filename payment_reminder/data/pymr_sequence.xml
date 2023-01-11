@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="seq_payment-reminder_config" model="ir.sequence">
+            <field name="name">Sequence</field>
+            <field name="code">payment.reminder.config</field>
+            <field name="prefix">PYRM/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
