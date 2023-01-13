@@ -1,0 +1,38 @@
+<odoo>
+    <record id="payment_reminder_config_form" model="ir.ui.view">
+        <field name="name">so.lost.reason.form</field>
+        <field name="model">so.lost.reason</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_reminder_config_tree" model="ir.ui.view">
+        <field name="name">so.lost.reason.tree</field>
+        <field name="model">so.lost.reason</field>
+        <field name="arch" type="xml">
+            <tree string="lost reasons" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_so_cancel_reasons" model="ir.actions.act_window">
+        <field name="name">so_cancel_reasons</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">so.lost.reason</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_so_cancel_reasons"
+              name="So Lost Reasons"
+              action="action_so_cancel_reasons"
+              parent="sale.menu_sale_config"
+              sequence='12'/>
+</odoo>

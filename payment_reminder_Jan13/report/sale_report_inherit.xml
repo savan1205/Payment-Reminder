@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <template id="report_sale_inherit" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//p[@id='fiscal_position_remark']" position="before">
+                <div t-if="doc.payment_rem_id">
+                    <strong>Payment Reminder:</strong>
+                    <p class="m-0" t-field="doc.payment_rem_id"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

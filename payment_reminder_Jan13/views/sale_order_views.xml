@@ -1,0 +1,27 @@
+<odoo>
+    <record id="so_inherit_form_view" model="ir.ui.view">
+        <field name="name">So</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_id']"
+                   position="after">
+                <field name="payment_rem_id"/>
+            </xpath>
+<!--            <xpath expr="//field[@name='payment_term_id']"-->
+<!--                   position="after">-->
+<!--                <field name="lost_reason_id" attrs="{'invisible':[('state','!=','cancel')]}"/>-->
+<!--            </xpath>-->
+
+<!--            <xpath expr="//button[@name='action_cancel']"-->
+<!--                   position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//button[@name='action_cancel']"-->
+<!--                   position="after">-->
+<!--                <button name="send_cancellation_mail" type="object" string="Cancel"-->
+<!--                        attrs="{'invisible':[('state','!=','sale')]}"/>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+</odoo>

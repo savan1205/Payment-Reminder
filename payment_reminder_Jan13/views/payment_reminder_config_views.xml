@@ -1,0 +1,49 @@
+<odoo>
+    <record id="payment_reminder_config_form" model="ir.ui.view">
+        <field name="name">payment.reminder.config</field>
+        <field name="model">payment.reminder.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="mail_template_id"/>
+                        </group>
+                        <group>
+                            <field name="deadline_days"/>
+                            <field name="sales_domain" widget="domain"
+                                   options="{'model': 'sale.order', 'in_dialog': true}"/>
+                        </group>
+                        <group>
+                            <field name="sale_order_ids"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_reminder_config_tree" model="ir.ui.view">
+        <field name="name">payment_reminder_config</field>
+        <field name="model">payment.reminder.config</field>
+        <field name="arch" type="xml">
+            <tree string="payment_reminder_config">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_payment_reminder" model="ir.actions.act_window">
+        <field name="name">Payment reminder</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">payment.reminder.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_payment_reminder_config"
+              name="Payment reminder configs"
+              action="action_payment_reminder"
+              parent="sale.menu_sale_config"
+              sequence='11'/>
+</odoo>

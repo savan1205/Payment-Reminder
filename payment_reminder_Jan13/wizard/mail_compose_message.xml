@@ -1,0 +1,15 @@
+<odoo>
+    <record id="mail_compose_message_form_inh" model="ir.ui.view">
+        <field name="name">mail.compose.message</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@special='cancel']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@special='cancel']" position="after">
+                <button name="action_wizard_reason" string="cancel" type="object" class="btn-secondary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
