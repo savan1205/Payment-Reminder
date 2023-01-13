@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+payment_reminder.access_payment_reminder_config,access_payment_reminder_config,payment_reminder.model_payment_reminder_config,base.group_user,1,1,1,1
+
+payment_reminder.access_wizard_lots_serial,access_wizard_lots_serial,payment_reminder.model_wizard_lots_serial,base.group_user,1,1,1,1
+

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sp_lots_serial_form_view" model="ir.ui.view">
+        <field name="name">wizard.lots.serial.form</field>
+        <field name="model">wizard.lots.serial</field>
+        <field name="arch" type="xml">
+            <form string="wizard.lots.serial">
+                <group>
+                    <field name="lots_ids"/>
+                </group>
+                <footer>
+                    <button name="action_button_validate"
+                            string="Confirm" type="object" class="oe_highlight" groups="stock.group_stock_user"
+                            data-hotkey="v"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
